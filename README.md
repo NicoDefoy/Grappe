@@ -192,4 +192,92 @@ Si vous voulez améliorer l'application :
 2. **Désactiver l'environnement virtuel**
    ```bash
    deactivate
-   ``` 
+   ```
+
+## Utilisation de Git 📚
+
+### Première fois
+
+1. **Cloner le projet**
+   ```bash
+   # Télécharger le code
+   git clone https://github.com/NicoDefoy/Grappe.git
+   
+   # Aller dans le dossier
+   cd Grappe
+   ```
+
+2. **Configurer l'environnement**
+   ```bash
+   # Créer et activer l'environnement virtuel
+   python -m venv venv
+   source venv/bin/activate  # (Mac/Linux)
+   # ou
+   venv\Scripts\activate     # (Windows)
+   
+   # Installer les dépendances
+   pip install -r backend/requirements.txt
+   ```
+
+### Pour les mises à jour
+
+1. **Avant de commencer à travailler**
+   ```bash
+   # Récupérer les dernières modifications
+   git pull origin main
+   ```
+
+2. **Pendant le travail**
+   ```bash
+   # Voir les fichiers modifiés
+   git status
+   
+   # Voir les modifications en détail
+   git diff
+   ```
+
+3. **Pour sauvegarder les modifications**
+   ```bash
+   # Ajouter les modifications
+   git add .
+   
+   # Créer un commit avec un message explicatif
+   git commit -m "Description des modifications"
+   
+   # Envoyer sur GitHub
+   git push origin main
+   ```
+
+### Commandes Git utiles
+
+- **Voir l'historique**
+  ```bash
+  git log --oneline  # Version courte
+  git log           # Version détaillée
+  ```
+
+- **Annuler des modifications**
+  ```bash
+  # Annuler les modifications non commitées
+  git restore <nom-fichier>
+  
+  # Annuler le dernier commit
+  git reset --soft HEAD~1
+  ```
+
+- **Créer une nouvelle branche**
+  ```bash
+  # Créer et aller sur la nouvelle branche
+  git checkout -b nom-de-la-branche
+  
+  # Revenir sur main
+  git checkout main
+  ```
+
+### ⚠️ Important
+- Ne jamais commit les fichiers sensibles (ils sont dans .gitignore) :
+  - Le modèle entraîné (*.pth)
+  - Les images d'entraînement
+  - Les annotations
+  - Les dossiers __pycache__
+  - L'environnement virtuel (venv) 
